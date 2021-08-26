@@ -5,6 +5,10 @@ public class Point2D {
     private static int pointsCounter;
     private final int pointID;
 
+    static {
+        System.out.println("Static block!");
+    }
+
     public Point2D(){
         this(0,0);
     }
@@ -55,6 +59,12 @@ public class Point2D {
 
         return sb.toString();
     }
+
+    public double distanceTo(Point2D rValue) {
+        return Math.sqrt((this.x-rValue.x)*(this.x-rValue.x) +
+                (this.y-rValue.y)*(this.y-rValue.y));
+    }
+
 
     private void length(){
         length = Math.sqrt(x*x + y*y);
